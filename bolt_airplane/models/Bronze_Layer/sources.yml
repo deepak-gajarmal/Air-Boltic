@@ -1,0 +1,60 @@
+version: 2
+
+sources:
+  - name: raw  
+    schema: raw_data  
+    database: air_boltic  
+    tables:
+      - name: trips
+        description: "Raw trips data containing trip metadata."
+        columns:
+          - name: trip_id
+          - name: origin_city
+          - name: destination_city
+          - name: airplane_id
+          - name: start_timestamp  
+          - name: end_timestamp
+          
+      - name: orders
+        description: "Raw orders data for customer bookings."
+        columns:
+          - name: order_id
+          - name: trip_id
+          - name: customer_id
+          - name: seat_no
+          - name: price
+          - name: payment_status
+
+      - name: customer
+        description: "Raw customer data including customer details."
+        columns:
+          - name: customer_id
+          - name: customer_group_id
+          - name: name
+          - name: email
+          - name: phone_number
+
+      - name: customer_group
+        description: "Raw customer group data."
+        columns:
+          - name: id
+          - name: group_name
+          - name: group_type
+          - name: registry_number
+
+      - name: aeroplane
+        description: "Raw airplane data including the airplane and model."
+        columns:
+          - name: airplane_id
+          - name: airplane_model
+          - name: manufacturer
+
+      - name: aeroplane_model
+        description: "Raw airplane model data extracted from JSON."
+        columns:
+          - name: manufacturer
+          - name: model_name
+          - name: max_seats
+          - name: max_weight
+          - name: max_distance
+          - name: engine_type

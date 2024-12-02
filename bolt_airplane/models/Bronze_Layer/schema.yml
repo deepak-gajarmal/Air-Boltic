@@ -1,0 +1,17 @@
+
+version: 2
+
+models:
+  - name: stg_trips
+    columns:
+      - name: trip_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
