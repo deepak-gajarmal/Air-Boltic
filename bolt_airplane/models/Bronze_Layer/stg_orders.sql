@@ -3,6 +3,5 @@ SELECT
     trip_id,
     customer_id,
     seat_no,
-    price,
-    payment_status
+    price
 FROM {{ source('raw', 'order') }};
