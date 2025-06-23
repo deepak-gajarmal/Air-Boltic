@@ -1,5 +1,4 @@
 SELECT
-    manufacturer,
     model_name,
     max_seats,
     max_weight_kg,
